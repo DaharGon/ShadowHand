@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Цент вербовки</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <br>
+    <div class="row">
+        <div class="col-md-3 col-xs-2"></div>
+        <div class="col-md-5 col-xs-7">
+             <form class="form-group" action="/get_sith/" method="post">
+                 {% csrf_token %}
+                <p><select class="form-control" name="siths">
+                    <option selected>Выберите Ситха</option>
+                    {% for i in siths %}
+                    <option>{{ i.name }}</option>
+                    {% endfor %}
+                </select></p>
+                <p><button class="btn btn-success">Выбрать</button></p>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
