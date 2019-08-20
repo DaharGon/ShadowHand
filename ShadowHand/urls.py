@@ -9,6 +9,7 @@ urlpatterns = [
     path('set_recruit/', set_recruit, name='set_recruit'),
     path('questions/<int:id>/', questions, name='questions'),
     path('get_sith/', get_sith, name='get_sith'),
-    path('get_recruits/<int:id>', get_recruits, name='get_recruits'),
+    path('get_recruits/<int:id>/', get_recruits, name='get_recruits'),
+    path('get_recruits/<int:id>/<int:recid>', get_recruits, name='get_recruits'),
     path('view_recrut_details/<int:id>', view_recrut_details, name='view_recrut_details')
 ]

@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'widget_tweaks',
     'main'
 ]
 
@@ -124,7 +123,14 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
 
 STATIC_URL = '/static/'
-#print(BASE_DIR)
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+
+#EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST = 'smtp.rambler.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "login"
+EMAIL_HOST_PASSWORD = "pass"
+EMAIL_USE_SSL = True

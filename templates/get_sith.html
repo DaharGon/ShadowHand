@@ -27,6 +27,22 @@
         </div>
 
     </div>
+    <div class="row">
+        <div class="col-md-3 col-xs-2"></div>
+        <div class="col-md-3 col-xs-3">
+            <p>Ситхи и их рекруты</p>
+            {% for key, value in values.items %}
+            <p>{{key}} {{ value }}</p>
+            {% endfor %}
+        </div>
+        <div class="col-md-3 col-xs-3">
+            <p>Ситхи с рекрутами</p>
+            {% for i in siths_distinct %}
+            <p>{{ i.name }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
 
 </body>
 </html>

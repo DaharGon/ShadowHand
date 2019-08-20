@@ -12,6 +12,10 @@
     <br>
     <table class="table">
     {% for i in recruits %}
+        <tr>
+            <td>
+
+
     <div class="row">
         <div class="col-md-5 col-xs-2"></div>
         <div class="col-md-1 col-xs-3">
@@ -21,12 +25,17 @@
 
         </div>
         <div class="col-md-2 col-xs-3">
+            <form action="{% url 'get_recruits' id=sith recid=i.id %}" method="post">
+                {% csrf_token %}
+                <p><button>В руку</button></p>
+            </form>
 
-            <p><button>В руку</button></p>
 
         </div>
 
     </div>
+                </td>
+        </tr>
     {% endfor %}
         </table>
 

@@ -27,6 +27,8 @@ class Recruit(models.Model):
     age = models.IntegerField(default=18, verbose_name='Возраст')
     email = models.CharField(default='', max_length=256, verbose_name='Email')
     master = models.ForeignKey(Sith, on_delete=models.CASCADE, null=True, blank=True)
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name = 'Рекрут'
