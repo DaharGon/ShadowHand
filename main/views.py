@@ -54,7 +54,12 @@ def get_sith(request):
             siths_distinct.add(i.master)
         return render(request, 'get_sith.html', {'siths':siths, 'siths_distinct':siths_distinct, 'values':values})
     elif request.method == 'POST':
-        sith = Sith.objects.get(name=request.POST['siths'])
+        error = ''
+        try:
+            sith = Sith.objects.get(name=request.POST['siths'])
+        except Exception:
+            error = 'Вы не выбрали Ситха!'
+            return render(request, 'errors.html', {'error':error})
         return HttpResponseRedirect('/get_recruits/{id}'.format(id=sith.id))
 
 def get_recruits(request, id, recid=False):

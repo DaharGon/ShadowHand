@@ -13,9 +13,10 @@
     <div class="row">
         <div class="col-md-3 col-xs-2"></div>
         <div class="col-md-5 col-xs-7">
+
              <form class="form-group" action="/get_sith/" method="post">
                  {% csrf_token %}
-                <p><select class="form-control" name="siths">
+                <p><select required class="form-control" name="siths">
                     <option selected>Выберите Ситха</option>
                     {% for i in siths %}
                     <option>{{ i.name }}</option>
